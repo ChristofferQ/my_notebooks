@@ -24,5 +24,17 @@ def write_list_to_file(output_file, lst):
         output_writer.writerow(['2015', '1', '0', '5106', '1'])
         output_writer.writerow(['2015', '1', '0', '5110', '1'])
         output_writer.writerow(['2022', 'this', 'is', 'a', 'test'])
+        
+def read_csv(input_file):
+    
+    parser.add_argument('url', help='The URL to process')
+    
+    input_file = open(input_file, 'r')
+    file_content = input_file.read()
+    content_list = file_content.split(",")
+    print(content_list)
+        
+  
+            
 
     
