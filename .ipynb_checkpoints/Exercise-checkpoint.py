@@ -25,17 +25,20 @@ def write_list_to_file(output_file, lst):
         output_writer.writerow(['2015', '1', '0', '5110', '1'])
         output_writer.writerow(['2022', 'this', 'is', 'a', 'test'])
         
+def read_csv(input_file):
+    import csv
+    
+    input_file = open(input_file, 'r')
+    file_content = input_file.read()
+    content_list = file_content.split(",")
+    print(content_list)
+    
+import argparse
+
 if __name__ == '__main__':
-    def read_csv(input_file):
-
-        parser.add_argument('input_file', help='The file to process')
-
-        input_file = open(input_file, 'r')
-        file_content = input_file.read()
-        content_list = file_content.split(",")
-        print(content_list)
-        
-  
-            
-
+    parser = argparse.ArgumentParser(description='A program that downloads a URL and stores it locally')
+    parser.add_argument('--destination', help='The name of the file to store the url in')
+    
+    args = parser.parse_args()
+    print('Destination:', args.destination)
     
