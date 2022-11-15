@@ -26,15 +26,18 @@ def write_list_to_file(output_file, lst):
         output_writer.writerow(['2022', 'this', 'is', 'a', 'test'])
         
 def read_csv(input_file):
-    
-    parser.add_argument('url', help='The URL to process')
+    import csv
     
     input_file = open(input_file, 'r')
     file_content = input_file.read()
     content_list = file_content.split(",")
     print(content_list)
-        
-  
-            
 
-    
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='A program that reads from one file and writes to another')
+    parser.add_argument('url', help='The URL to process')
+    parser.add_argument('-d', '--destination', help='The name of the file to store the url in')
+
+    args = parser.parse_args()
+    print('URL:', args.url)
+    print('Destination:', args.destination)
